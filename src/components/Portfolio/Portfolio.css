@@ -108,6 +108,7 @@ img {
   align-items: center;
   transition: transform 0.3s;
   overflow: hidden;
+  width: 100%;
 }
 
 .projectsContent:hover {
