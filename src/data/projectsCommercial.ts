@@ -1,7 +1,17 @@
+import CHAMADOS from "../../public/assets/projects/suporte/suporte.png";
+import BIKES from "../../public/assets/projects/dantas/dantasbikes.png";
+import REDES from "../../public/assets/projects/meninaRedes/meninaRedes.png";
+import HTML from "../../public/assets/icons/html.svg";
+import JS from "../../public/assets/icons/javascript.svg";
+import CSS from "../../public/assets/icons/css.svg";
+import REACT from "../../public/assets/icons/react.svg";
+import TYPE from "../../public/assets/icons/typescript.svg";
+import NEXT from "../../public/assets/icons/next-js.svg";
+
 const projectsCommercial = [
   {
     id: 1,
-    img: "/public/imgs/projects/suporte/suporte.png",
+    img: CHAMADOS,
     title: "Sistema de chamados",
     web: "",
     description:
@@ -9,22 +19,22 @@ const projectsCommercial = [
     tags: [
       {
         name: "Html",
-        icon: "/public/assets/icons/html.svg",
+        icon: HTML,
       },
       {
         name: "Css",
-        icon: "/public/assets/icons/css.svg",
+        icon: CSS,
       },
       {
         name: "Javascript",
-        icon: "/public/assets/icons/javascript.svg",
+        icon: JS,
       },
     ],
   },
 
   {
     id: 2,
-    img: "/public/imgs/projects/dantas/dantasbikes.png",
+    img: BIKES,
     title: "Ecommerce Dantas Bikes",
     web: "https://dantasbikes.com.br/",
     description:
@@ -32,41 +42,41 @@ const projectsCommercial = [
     tags: [
       {
         name: "React Js",
-        icon: "/public/assets/icons/react.svg",
+        icon: REACT,
       },
       {
         name: "JavaScript",
-        icon: "/public/assets/icons/javascript.svg",
+        icon: JS,
       },
       {
         name: "TypeScript",
-        icon: "/public/assets/icons/typescript.svg",
+        icon: TYPE,
       },
       {
         name: "Css",
-        icon: "/public/assets/icons/css.svg",
+        icon: CSS,
       },
       {
         name: "Next js",
-        icon: "/public/assets/icons/next-js.svg",
+        icon: NEXT,
       },
     ],
   },
 
   {
     id: 3,
-    img: "/public/imgs/projects/meninaRedes/meninaRedes.png",
+    img: REDES,
     title: "Portfolio menina de redes",
     web: "https://meninaderedes.bohr.io/",
     description: "Portfolio desenvolvido para uma cliente",
     tags: [
       {
-        name: "Htmls",
-        icon: "/public/assets/icons/html.svg",
+        name: "Html",
+        icon: HTML,
       },
       {
         name: "Css",
-        icon: "/public/assets/icons/css.svg",
+        icon: CSS,
       },
     ],
   },
