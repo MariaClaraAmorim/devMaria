@@ -1,0 +1,147 @@
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  position: fixed;
+  z-index: 100;
+  padding: 2rem 6%;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.logo {
+  color: var(--text_color);
+  cursor: default;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.logo_span {
+  text-shadow: 0 0 1rem var(--main_color);
+}
+
+.links_list {
+  display: flex;
+  list-style: none;
+}
+
+.links_list a {
+  color: var(--text_color);
+  font-size: 1.7rem;
+  font-family: "Orbitron", sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  margin-left: 4rem;
+  position: relative;
+  transition: 0.3s;
+}
+
+.links_list a:hover::after,
+.links_list a.active {
+  color: var(--main_color);
+  width: 100%;
+}
+
+.links_list a::after {
+  content: " ";
+  background: var(--main_color);
+  bottom: 0;
+  height: 0.3rem;
+  left: 0;
+  margin-top: 0.2rem;
+  position: absolute;
+  transition: 0.5s ease-in-out;
+  width: 0%;
+}
+
+.icons_container {
+  display: flex;
+  /* gap: 2rem; */
+  place-content: center;
+}
+
+.flag {
+  cursor: pointer;
+  height: 2rem;
+  position: absolute;
+  width: 2rem;
+}
+
+.flagEng {
+  cursor: pointer;
+  height: 2rem;
+  position: absolute;
+  width: 2rem;
+}
+
+label {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.darkLightMode {
+  cursor: pointer;
+  height: 2rem;
+  opacity: 0;
+  width: 2rem;
+}
+
+.darkLightMode:checked ~ .sun_icon {
+  transition-delay: 0s;
+  transform: rotate(360deg) scale(0);
+}
+
+.sun_icon {
+  color: var(--text_color);
+  cursor: pointer;
+  font-size: 2.4rem;
+  transition: 0.6s ease;
+  transition-delay: 0.6s;
+  width: 2rem;
+}
+
+.darkLightMode:checked ~ .moon_icon {
+  transition-delay: 0.6s;
+  transform: scale(1) rotate(360deg);
+}
+
+.moon_icon {
+  color: var(--text_color);
+  cursor: pointer;
+  font-size: 2.4rem;
+  position: absolute;
+  transform: scale(0);
+  width: 2rem;
+  transition: 0.7s ease;
+}
+
+.input_palette_colors {
+  cursor: pointer;
+  height: 2rem;
+  opacity: 0;
+  position: absolute;
+  width: 2rem;
+}
+
+.palette {
+  color: var(--text_color);
+  font-size: 2.4rem;
+}
+
+.toggle_palette_theme {
+  background-color: #000;
+  border: 0.2rem solid var(--main_color);
+  height: 0;
+  position: absolute;
+  top: 100%;
+  text-align: center;
+  transition: 0.5s ease;
+  width: 3.9rem;
+}
+
+.palette_open {
+  height: 14.9rem;
+}

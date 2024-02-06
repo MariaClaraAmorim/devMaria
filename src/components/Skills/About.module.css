@@ -1,0 +1,224 @@
+.skills {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10rem 6% 2rem;
+  gap: 3rem;
+}
+
+.skills h3 {
+  font-size: 3.5rem;
+  margin-right: 2rem;
+  margin-bottom: 0;
+}
+
+.icons_container {
+  display: flex;
+  gap: 1rem;
+ /*  flex-wrap: wrap; */
+}
+
+.box_icon {
+  position: relative;
+}
+
+.box_icon:hover .icon_description {
+  display: block;
+  top: -25%;
+  transform: translate(-50%, 0%);
+}
+
+.icon_description {
+  display: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  left: 50%;
+  position: absolute;
+  text-transform: uppercase;
+  top: 50%;
+}
+
+.icons_container .react,
+.redux,
+.javascript,
+.git,
+.bootstrap,
+.css,
+.html,
+.github,
+.typescript,
+.firebase,
+.mysql,
+.canva,
+.vscode {
+  border-radius: 25%;
+  border: 0.1rem solid var(--main_color);
+  display: inline-flex;
+  color: var(--main_color);
+  height: 11rem;
+  margin: 1rem 0 0.8rem;
+  padding: 0.4rem;
+  transition: 0.3s ease;
+  width: 9rem;
+}
+
+.icons_container .react:hover,
+.redux:hover,
+.typescript:hover,
+.javascript:hover,
+.mysql:hover,
+.git:hover,
+.bootstrap:hover,
+.css:hover,
+.html:hover,
+.firebase:hover,
+.canva:hover,
+.vscode:hover {
+  box-shadow: 0 0 1rem var(--main_color);
+  background-color: var(--main_color);
+  border: none;
+  color: var(--bg_color);
+}
+
+/* <========== breakpoints ==========> */
+
+@media (max-width: 1100px) {
+  .about_content h2 {
+    font-size: 2.5rem;
+  }
+
+  .about_content p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .container_img_skills img {
+    width: 35vw;
+  }
+  .about_content {
+    width: 400px;
+  }
+
+  .skills {
+    width: auto;
+  }
+
+  .icons_container .react,
+  .redux,
+  .javascript,
+  .git,
+  .bootstrap,
+  .css,
+  .html,
+  .github,
+  .typescript,
+  .firebase,
+  .mysql,
+  .canva,
+  .vscode {
+    height: 3.8rem;
+    width: 3.8rem;
+  }
+
+  .skills h3 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    gap: 6rem;
+  }
+
+  .about_content {
+    width: auto;
+  }
+
+  .icons_container {
+    bottom: 0.8rem;
+  }
+
+  .container_img_skills img {
+    width: 40vw;
+  }
+
+  .skills h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .about {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+
+  .about_content {
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+  }
+
+  .about_content h2 {
+    font-size: 2.7rem;
+  }
+
+  .about_content p {
+    font-size: 1.9rem;
+  }
+
+  .skills {
+    flex-direction: column;
+    position: static;
+    width: 100%;
+  }
+
+  .skills h3 {
+    font-size: 2.7rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .container_img_skills {
+    height: auto;
+  }
+
+  .container_img_skills img {
+    display: none;
+  }
+
+  .icons_container {
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding-left: 1rem;
+    width: auto;
+  }
+
+  .icons_container .react,
+  .redux,
+  .javascript,
+  .git,
+  .bootstrap,
+  .css,
+  .html,
+  .github,
+  .typescript,
+  .firebase,
+  .mysql,
+  .canva,
+  .vscode {
+    height: 5rem;
+    margin-bottom: 1.1rem;
+    width: 5rem;
+  }
+}
+
+@media (max-width: 440px) {
+  .about {
+    max-height: 100vh;
+    padding: 7rem 3% 2rem;
+  }
+}

@@ -1,0 +1,29 @@
+.slide_in {
+  background: var(--second_bg_color);
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transform-origin: bottom;
+  width: 100%;
+  z-index: 2;
+}
+
+.slide_out {
+  background: var(--second_bg_color);
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transform-origin: top;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+

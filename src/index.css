@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  border: none;
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 0.1rem;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 1.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #797979;
+  transition: all 0.5s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #222224;
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f9f9;
+}
+
+:root {
+  --bg_color: #1f242d;
+  --main_color: #fb00ef;
+  --placeholder_color: rgba(255, 255, 255, 0.3);
+  --second_bg_color: #323946;
+  --text_color: #ededed;
+}
+
+.light_mode {
+  --bg_color: #f0f3fd;
+  --main_color: #dc2626;
+  --placeholder_color: #808080;
+  --second_bg_color: #cbd5e1;
+  --text_color: #020617;
+  transition: 1.5s;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg_color);
+  color: var(--text_color);
+}
+
+span {
+  color: var(--main_color);
+}
+
+p {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  margin: 1rem 0 1rem;
+  text-align: justify;
+}
+
+h2 {
+  text-align: center;
+  font-size: 4rem;
+}

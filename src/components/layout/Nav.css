@@ -1,0 +1,148 @@
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 1rem;
+  width: 100%;
+}
+
+.navList {
+  display: flex;
+  column-gap: 2rem;
+  align-items: center;
+}
+
+.navLink {
+  font-family: cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: medium;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  transition: 0.3s;
+}
+
+.navLink:hover {
+  color: var(--main_color);
+}
+
+.logoDev {
+  color: var(--text_color);
+  cursor: default;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.logo_span {
+  text-shadow: 0 0 1rem var(--main_color);
+}
+
+.icons_container {
+  display: flex;
+  place-content: center;
+}
+
+.darkLightMode {
+  cursor: pointer;
+  height: 2rem;
+  opacity: 0;
+  width: 2rem;
+}
+
+.darkLightMode:checked ~ .sun_icon {
+  transition-delay: 0s;
+  transform: rotate(360deg) scale(0);
+}
+
+.sun_icon {
+  color: var(--text_color);
+  cursor: pointer;
+  font-size: 2.4rem;
+  position: absolute;
+  transition: 0.6s ease;
+  width: 2rem;
+  transition-delay: 0.6s;
+}
+
+.darkLightMode:checked ~ .moon_icon {
+  transition-delay: 0.6s;
+  transform: scale(1) rotate(360deg);
+}
+
+.moon_icon {
+  color: var(--text_color);
+  cursor: pointer;
+  font-size: 2.4rem;
+  position: absolute;
+  transform: scale(0);
+  width: 2rem;
+  transition: 0.7s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    top: initial;
+    bottom: 0;
+  }
+
+  .nav {
+    height: var(--header-height);
+  }
+
+  .navMenu {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--second_bg_color);
+    padding: 2rem 1.5rem 4rem;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 1.5rem 1.5rem 0 0;
+    transition: 0.3s;
+  }
+
+  .show-menu {
+    bottom: 0;
+  }
+
+  .navList {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .navMenu {
+    padding: 2rem 0.25rem 4rem;
+  }
+
+  .navList {
+    column-gap: 0;
+  }
+}
+
+@media screen and (max-width: 163px) {
+  .header {
+    display: none;
+  }
+}
+
+.tsparticles {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
