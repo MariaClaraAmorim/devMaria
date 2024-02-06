@@ -1,7 +1,18 @@
+import SPOTIFY from "../../public/assets/projects/spotify/spotify.png";
+import MEME from "../../public/assets/projects/memeMaker/memeMaker.png";
+import TWITTER from "../../public/assets/projects/twitter/twitter.png";
+import CONTROLE from "../../public/assets/projects/control/controle.png";
+import HTML from "../../public/assets/icons/html.svg";
+import JS from "../../public/assets/icons/javascript.svg";
+import CSS from "../../public/assets/icons/css.svg";
+import REACT from "../../public/assets/icons/react.svg";
+import TYPE from "../../public/assets/icons/typescript.svg";
+import NEXT from "../../public/assets/icons/next-js.svg";
+
 const projectsPersonal = [
   {
     id: 1,
-    img: "/public/imgs/projects/spotify/spotify.png",
+    img: SPOTIFY,
     title: "Clone Spotify",
     github: "https://github.com/MariaClaraAmorim/spotify-clone",
     web: "https://spotify-clone-iota-henna.vercel.app/",
@@ -9,89 +20,83 @@ const projectsPersonal = [
     tags: [
       {
         name: "Html",
-        icon: "/public/assets/icons/html.svg",
-        color: "#FFFFFF",
-        rgb: "255, 255, 255",
+        icon: HTML,
       },
       {
         name: "Css",
-        icon: "/public/assets/icons/css.svg",
-        color: "#635BFF",
-        rgb: "99, 91, 255",
+        icon: CSS,
       },
       {
         name: "Javascript",
-        icon: "/public/assets/icons/javascript.svg",
-        color: "#3178C6",
-        rgb: "49, 120, 198",
+        icon: JS,
       },
       {
         name: "TypeScript",
-        icon: "/public/assets/icons/typescript.svg",
-        color: "#38BDF8",
-        rgb: "56, 189, 248",
+        icon: TYPE,
       },
     ],
   },
 
   {
     id: 2,
-    img: "/public/imgs/projects/memeMaker/memeMaker.png",
+    img: MEME,
     title: "Meme Maker",
     web: "https://meme-generator-coral-six.vercel.app/",
     description:
       "Aplicativo para criação de memes, API: https://imgflip.com/api",
-    technologies: ["Next js", "Typescript", "CSS"],
     tags: [
       {
         name: "React Js",
-        icon: "/public/assets/icons/react.svg",
+        icon: REACT,
       },
       {
         name: "JavaScript",
-        icon: "/public/assets/icons/javascript.svg",
+        icon: JS,
       },
       {
         name: "TypeScript",
-        icon: "/public/assets/icons/typescript.svg",
+        icon: TYPE,
       },
       {
         name: "Css",
-        icon: "/public/assets/icons/css.svg",
+        icon: CSS,
       },
     ],
   },
 
   {
     id: 3,
-    img: "/public/imgs/projects/twitter/twitter.png",
+    img: TWITTER,
     title: "Twitter",
     web: "https://clone-twitter-tawny.vercel.app/",
     github: "https://github.com/MariaClaraAmorim/clone-twitter",
     description: "Clonagem da rede social Twitter",
-    technologies: ["Next js", "Typescript", "CSS"],
     tags: [
       {
         name: "React Js",
-        icon: "/public/assets/icons/react.svg",
+        icon: REACT,
       },
       {
         name: "JavaScript",
-        icon: "/public/assets/icons/javascript.svg",
+        icon: JS,
       },
       {
         name: "TypeScript",
-        icon: "/public/assets/icons/typescript.svg",
+        icon: TYPE,
       },
       {
         name: "Css",
-        icon: "/public/assets/icons/css.svg",
+        icon: CSS,
+      },
+      {
+        name: "Next",
+        icon: NEXT,
       },
     ],
   },
   {
     id: 4,
-    img: "/public/imgs/projects/control/controle.png",
+    img: CONTROLE,
     title: "Twitter",
     web: "https://gerenciador-project.vercel.app/",
     github: "https://github.com/MariaClaraAmorim/gerenciador-project",
@@ -99,19 +104,19 @@ const projectsPersonal = [
     tags: [
       {
         name: "React Js",
-        icon: "/public/assets/icons/react.svg",
+        icon: REACT,
       },
       {
         name: "JavaScript",
-        icon: "/public/assets/icons/javascript.svg",
+        icon: JS,
       },
       {
         name: "html",
-        icon: "/public/assets/icons/html.svg",
+        icon: HTML,
       },
       {
         name: "Css",
-        icon: "/public/assets/icons/css.svg",
+        icon: CSS,
       },
     ],
   },
