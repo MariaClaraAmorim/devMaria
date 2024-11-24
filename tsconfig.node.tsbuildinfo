@@ -1,0 +1,29 @@
+{
+    "root": [
+        "./src/app.tsx",
+        "./src/main.tsx",
+        "./src/vite-env.d.ts",
+        "./src/components/about/index.tsx",
+        "./src/components/contact/index.tsx",
+        "./src/components/desktop/desktop.tsx",
+        "./src/components/desktop/modal.tsx",
+        "./src/components/desktop/startmenu.tsx",
+        "./src/components/desktop/taskbar.tsx",
+        "./src/components/error/index.tsx",
+        "./src/components/footer/index.tsx",
+        "./src/components/header/header.tsx",
+        "./src/components/home/index.tsx",
+        "./src/components/internet/internetexplorer.tsx",
+        "./src/components/medias/index.tsx",
+        "./src/components/projects/index.tsx",
+        "./src/components/skills/index.tsx",
+        "./src/components/startupscreen/startupscreen.tsx",
+        "./src/components/transition/transition.tsx",
+        "./src/components/welcomescreen/welcomescreen.tsx",
+        "./src/context/themecontext.tsx",
+        "./src/layout/portfolio.tsx",
+        "./src/lib/i18n.tsx",
+        "./src/pages/home.tsx"
+    ],
+    "version": "5.6.3"
+}
