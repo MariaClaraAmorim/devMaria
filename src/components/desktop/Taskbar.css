@@ -1,0 +1,115 @@
+#windowsXP {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.taskbar {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100vw;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    background: #0078d7;
+    z-index: 995;
+}
+
+.start-button {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to bottom, #3d973d, #6faf72, #3d973d 18%, #3d973d 92%, #666);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.start-button .icon-image {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+.start-button:hover {
+    background: #07923d;
+
+}
+
+.taskbar-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    background: linear-gradient(to bottom, #0fadf4 0%, #0fadf4 9%, #108ae5 18%, #108ae5 92%, #666 100%);
+    padding: 10px;
+    cursor: pointer;
+}
+
+.taskbar-icons {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+}
+
+.taskbar-icon {
+    margin: 0 5px;
+}
+
+.taskbar-icon .icon-image {
+    width: 24px;
+    height: 24px;
+}
+
+.system-tray {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: linear-gradient(to bottom,
+            #0fadf4 0%,
+            #0fadf4 9%,
+            #108ae5 18%,
+            #108ae5 92%,
+            #666 100%);
+}
+
+.system-tray .icon-image {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+#volume {
+    margin-left: 10px;
+    background: url("https://img.ibxk.com.br/2014/3/programas/7868525214145846.png");
+    background-size: cover;
+}
+
+#seguranca {
+    background: url("https://1.bp.blogspot.com/_8H6ayPA2iRw/R4Sp5ZVhUnI/AAAAAAAAAJk/Sv91jzKzPZs/s320/cat_icon_security_256.png");
+    background-size: cover;
+}
+
+#media {
+    background: url("https://icons.iconarchive.com/icons/hopstarter/software/256/Windows-Media-Player-icon.png");
+    background-size: cover;
+}
+
+.clock {
+    margin-right: 15px;
+    color: white;
+    font-family: "VT323", monospace;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: context-menu;
+}

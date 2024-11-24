@@ -1,0 +1,84 @@
+.start-menu {
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+    width: 380px;
+    background: linear-gradient(to bottom, #4a98e0, #2857a4);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.start-menu-header {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background-color: #3a78b2;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.user-name {
+    font-weight: bold;
+    color: #fff;
+}
+
+.start-menu-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: #fff;
+
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #000;
+    font-size: 13px;
+}
+
+.menu-item img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.menu-item:hover {
+    background-color: #3a78b2;
+    border-radius: 4px;
+}
+
+.link {
+    cursor: pointer;
+    color: #000;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+
+}
