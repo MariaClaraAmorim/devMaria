@@ -3,7 +3,7 @@ import './Desktop.css';
 import StartMenu from './StartMenu';
 import Taskbar from './Taskbar';
 import Modal from './Modal';
-import InternetExplorerInterface from '../internet/InternetExplorer';
+import InternetExplorerInterface from '../internet';
 
 const Desktop: React.FC = () => {
     const [menuOpen, setMenuOpen] = useState(false);

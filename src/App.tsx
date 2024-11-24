@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext";
-import StartupScreen from "./components/startupScreen/StartupScreen";
-import WelcomeScreen from "./components/welcomeScreen/WelcomeScreen";
+import StartupScreen from "./components/startupScreen";
+import WelcomeScreen from "./components/welcomeScreen";
 import Desktop from "./components/desktop/Desktop";
 
 function App() {

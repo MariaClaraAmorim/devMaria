@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.css';
-import Header from '../header/header';
+import Header from '../header';
 import HomeComponent from '../home';
 import About from '../about';
 import Skills from '../skills';

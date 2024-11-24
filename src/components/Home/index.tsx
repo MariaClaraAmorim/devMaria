@@ -1,7 +1,7 @@
 import { IoCloudDownloadOutline } from 'react-icons/io5';
 import GIF from '../../../public/maria.gif';
 import { useTranslation } from 'react-i18next';
-import Transition from '../transition/Transition';
+import Transition from '../transition';
 import './Home.css';
 import Medias from '../medias';
 

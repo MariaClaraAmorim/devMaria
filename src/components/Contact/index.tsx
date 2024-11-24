@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Transition from "../../components/transition/Transition";
+import Transition from "../transition";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { IoCafeOutline } from "react-icons/io5";
