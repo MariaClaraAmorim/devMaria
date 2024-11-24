@@ -1,0 +1,69 @@
+[
+    {
+        "id": 1,
+        "name": "Sistema de chamados",
+        "description": "Sistema de gerenciamento de chamados para a empresa Dantas Eletro, desenvolvido para otimizar a comunicação e resolução de demandas internas da empresa.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "Javascript",
+            "PHP"
+        ],
+        "github": "",
+        "deploy": "",
+        "image": "/suporte.png"
+    },
+    {
+        "id": 2,
+        "name": "Ecommerce Dantas Bikes",
+        "description": "Plataforma de comércio eletrônico focada na venda de bicicletas e acessórios, com funcionalidades completas de e-commerce, desenvolvida em equipe para a Dantas Bikes.",
+        "technologies": [
+            "React",
+            "Typescript",
+            "CSS",
+            "Nextjs"
+        ],
+        "github": "",
+        "deploy": "",
+        "image": "/dantasbikes.png"
+    },
+    {
+        "id": 3,
+        "name": "Tropical Açaí",
+        "description": "Sistema de delivery para a rede Tropical Açaí, desenvolvido para facilitar pedidos online e a entrega de açaí, com interface moderna e responsiva.",
+        "technologies": [
+            "CSS",
+            "Typescript",
+            "Prisma"
+        ],
+        "github": "https://github.com/MariaClaraAmorim/Tropical-Acai-Front",
+        "deploy": "https://tropical-acai.vercel.app/login",
+        "image": "/tropical.jpeg"
+    },
+    {
+        "id": 4,
+        "name": "Lista de compras",
+        "description": "Aplicação para gerenciamento de listas de compras, permitindo aos usuários adicionar, editar e excluir itens de forma simples e intuitiva.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "Javascript"
+        ],
+        "github": "https://github.com/MariaClaraAmorim/shopping-list",
+        "deploy": "https://shopping-list.bohr.io/",
+        "image": "/compras.jpeg"
+    },
+    {
+        "id": 5,
+        "name": "Agendamento de barbearia",
+        "description": "Sistema para agendamento de horários em barbearias, permitindo aos clientes escolherem serviços e horários disponíveis de forma prática e eficiente.",
+        "technologies": [
+            "Tailwindcss",
+            "Typescript",
+            "Prisma"
+        ],
+        "github": "https://github.com/MariaClaraAmorim/Barber-Studio",
+        "deploy": "https://barber-studio.vercel.app/",
+        "image": "/barber.jpeg"
+    }
+]
