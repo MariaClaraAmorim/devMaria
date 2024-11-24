@@ -6,7 +6,7 @@ interface WelcomeScreenProps {
 }
 
 const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onFinish }) => {
-    const [canPlaySound, setCanPlaySound] = React.useState(true);
+    const [canPlaySound] = React.useState(true);
 
     useEffect(() => {
         if (canPlaySound) {

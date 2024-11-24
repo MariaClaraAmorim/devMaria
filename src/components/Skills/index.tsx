@@ -9,7 +9,6 @@ import {
     BiLogoTypescript,
     BiLogoVisualStudio,
 } from "react-icons/bi";
-import { FaGitAlt } from "react-icons/fa6";
 import { GrMysql } from "react-icons/gr";
 import { SiCanva, SiInsomnia } from "react-icons/si";
 import './skills.css';
