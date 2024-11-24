@@ -1,0 +1,40 @@
+.browser-window {
+    border: 1px solid #ccc;
+    background-color: white;
+    height: 70vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background-color: #e1e1e1;
+    border-bottom: 1px solid #ccc;
+}
+
+.back-button,
+.search-icon,
+.home-icon {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0 5px;
+}
+
+.url-bar {
+    flex: 1;
+    padding: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.content-frame {
+    width: 100%;
+    height: calc(100% - 40px);
+    border: none;
+    background: var(--bg_color);
+    color: var(--text_color);
+    overflow-y: scroll;
+}
