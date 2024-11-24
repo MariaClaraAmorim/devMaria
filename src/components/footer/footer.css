@@ -4,26 +4,30 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.footer__container {
+.footer-container {
   padding: 2rem 0 6rem;
 }
 
 
-.footer__title {
+.footer-title {
   text-align: center;
 }
 
-.dot__footer {
+.dot-footer {
   color: var(--main_color);
+  font-size: 16px;
+  font-weight: 600;
+  text-shadow: 0 0 1rem var(--main-color);
 }
 
-.footer__copy {
+.footer-copy {
   display: block;
   text-align: center;
+  margin-top: 10px;
 }
 
 @media screen and (max-width: 992px) {
-  .footer__social-link {
+  .footer-social-link {
     padding: 0.25rem;
     border-radius: 0.25rem;
     font-size: 1rem;

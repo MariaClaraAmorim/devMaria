@@ -1,212 +1,81 @@
-import styles from "./About.module.css";
-
+import { useState } from 'react';
+import { useTranslation } from "react-i18next";
 import {
-  BiLogoCss3,
-  BiLogoHtml5,
-  BiLogoJavascript,
-  BiLogoPhp,
-  BiLogoReact,
-  BiLogoTypescript,
-  BiLogoVisualStudio,
+    BiLogoCss3,
+    BiLogoHtml5,
+    BiLogoJavascript,
+    BiLogoPhp,
+    BiLogoReact,
+    BiLogoTypescript,
+    BiLogoVisualStudio,
 } from "react-icons/bi";
 import { FaGitAlt } from "react-icons/fa6";
 import { GrMysql } from "react-icons/gr";
-import { SiCanva } from "react-icons/si";
+import { SiCanva, SiInsomnia } from "react-icons/si";
+import './skills.css';
+import { LuGithub } from 'react-icons/lu';
 
-import { motion } from "framer-motion";
-import { t } from "i18next";
-import { useState } from "react";
-import "./skills.css";
-
-const container = {
-  hidden: { opacity: 1, scale: 0 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      delayChildren: 0.5,
-      staggerChildren: 0.2,
-    },
-  },
+const skillsData = {
+    frontend: [
+        { name: "JavaScript", icon: <BiLogoJavascript /> },
+        { name: "React", icon: <BiLogoReact /> },
+        { name: "CSS", icon: <BiLogoCss3 /> },
+        { name: "HTML", icon: <BiLogoHtml5 /> },
+        { name: "TypeScript", icon: <BiLogoTypescript /> },
+        { name: "Next.js", icon: <BiLogoReact /> },
+        { name: "Tailwind CSS", icon: <BiLogoCss3 /> },
+    ],
+    backend: [
+        { name: "PHP", icon: <BiLogoPhp /> },
+        { name: "Node.js", icon: <BiLogoTypescript /> },
+        { name: "Express.js", icon: <BiLogoJavascript /> },
+        { name: "MySQL", icon: <GrMysql /> },
+        { name: "MongoDB", icon: <GrMysql /> },
+        { name: "Fastify", icon: <BiLogoJavascript /> },
+    ],
+    tools: [
+        { name: "Github", icon: <LuGithub /> },
+        { name: "Figma", icon: <BiLogoVisualStudio /> },
+        { name: "Canva", icon: <SiCanva /> },
+        { name: "Visual Studio Code", icon: <BiLogoVisualStudio /> },
+        { name: "Insomnia", icon: <SiInsomnia /> },
+    ],
 };
 
-const item = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-  },
+
+const Skills = () => {
+    const { t } = useTranslation();
+
+    const [activeTab, setActiveTab] = useState("frontend");
+
+    const handleTabClick = (tab: string) => {
+        setActiveTab(tab);
+    };
+
+    return (
+        <section className="skills">
+            <h2>{t("habilidades.titulo")} 💪</h2>
+            <div className="tabs">
+                <button className={`tab-button ${activeTab === 'frontend' ? 'active' : ''}`} onClick={() => handleTabClick("frontend")}>
+                    Front-end
+                </button>
+                <button className={`tab-button ${activeTab === 'backend' ? 'active' : ''}`} onClick={() => handleTabClick("backend")}>
+                    Back-end
+                </button>
+                <button className={`tab-button ${activeTab === 'tools' ? 'active' : ''}`} onClick={() => handleTabClick("tools")}>
+                    {t("habilidades.btnFerr")}
+                </button>
+            </div>
+            <div className="skills-container">
+                {skillsData[activeTab as keyof typeof skillsData].map((skill, index) => (
+                    <div key={index} className="skill-item" data-aos="fade-up">
+                        <h3 className="skill-name">{skill.name}</h3>
+                        <div className="skill-icon">{skill.icon}</div>
+                    </div>
+                ))}
+            </div>
+        </section>
+    );
 };
 
-export default function Skills() {
-  const [toggleState, setToggleState] = useState<number>(0);
-
-  const toggleTab = (index: number) => {
-    setToggleState(index);
-  };
-  return (
-    <>
-      <section>
-        <div className={styles.skills}>
-          <h3>{t("habilidades.titulo")}</h3>
-          <div className="qualification__container">
-            <div className="qualification__tabs">
-              <div
-                className={
-                  toggleState === 1
-                    ? "qualification__button qualification__active button--flex"
-                    : "qualification__button qualification__active button--flex"
-                }
-                onClick={() => toggleTab(1)}
-              >
-                Frontend
-              </div>
-              <div
-                className={
-                  toggleState === 1
-                    ? "qualification__button qualification__active button--flex"
-                    : "qualification__button qualification__active button--flex"
-                }
-                onClick={() => toggleTab(2)}
-              >
-                Backend
-              </div>
-
-              <div
-                className={
-                  toggleState === 2
-                    ? "qualification__button qualification__active button--flex"
-                    : "qualification__button qualification__active button--flex"
-                }
-                onClick={() => toggleTab(3)}
-              >
-                {t("habilidades.btnFerr")}
-              </div>
-            </div>
-
-            <div className="qualification__sections">
-              <div
-                className={
-                  toggleState === 1
-                    ? "qualification__content qualification__content-active"
-                    : "qualification__content "
-                }
-              >
-                <div className="qualification__data">
-                  <div>
-                    <h3 className="qualification__title">
-                      <motion.div
-                        className={styles.icons_container}
-                        variants={container}
-                        initial="hidden"
-                        animate="visible"
-                      >
-                        <motion.div variants={item} className={styles.box_icon}>
-                          <span className={styles.icon_description}>React</span>
-                          <BiLogoReact className={styles.react} />
-                        </motion.div>
-
-                        <motion.div variants={item} className={styles.box_icon}>
-                          <span className={styles.icon_description}>
-                            Typescript
-                          </span>
-                          <BiLogoTypescript className={styles.typescript} />
-                        </motion.div>
-
-                        <motion.div variants={item} className={styles.box_icon}>
-                          <span className={styles.icon_description}>
-                            Javascript
-                          </span>
-                          <BiLogoJavascript className={styles.javascript} />
-                        </motion.div>
-
-                        <motion.div variants={item} className={styles.box_icon}>
-                          <span className={styles.icon_description}>CSS</span>
-                          <BiLogoCss3 className={styles.css} />
-                        </motion.div>
-
-                        <motion.div variants={item} className={styles.box_icon}>
-                          <span className={styles.icon_description}>HTML</span>
-                          <BiLogoHtml5 className={styles.html} />
-                        </motion.div>
-                      </motion.div>
-                    </h3>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                className={
-                  toggleState === 2
-                    ? "qualification__content qualification__content-active"
-                    : "qualification__content "
-                }
-              >
-                <div className="qualification__data">
-                  <div>
-                    <h3 className="qualification__title">
-                      <motion.div
-                        className={styles.icons_container}
-                        variants={container}
-                        initial="hidden"
-                        animate="visible"
-                      >
-                        <motion.div variants={item} className={styles.box_icon}>
-                          <span className={styles.icon_description}>MySQL</span>
-                          <GrMysql className={styles.mysql} />
-                        </motion.div>
-
-                        <motion.div variants={item} className={styles.box_icon}>
-                          <span className={styles.icon_description}>PHP</span>
-                          <BiLogoPhp className={styles.mysql} />
-                        </motion.div>
-                      </motion.div>
-                    </h3>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                className={
-                  toggleState === 3
-                    ? "qualification__content qualification__content-active"
-                    : "qualification__content "
-                }
-              >
-                <div className="qualification__data">
-                  <div>
-                    <h3 className="qualification__title">
-                      <motion.div
-                        className={styles.icons_container}
-                        variants={container}
-                        initial="hidden"
-                        animate="visible"
-                      >
-                        <motion.div variants={item} className={styles.box_icon}>
-                          <span className={styles.icon_description}>Git</span>
-                          <FaGitAlt className={styles.git} />
-                        </motion.div>
-
-                        <motion.div variants={item} className={styles.box_icon}>
-                          <span className={styles.icon_description}>Canva</span>
-                          <SiCanva className={styles.canva} />
-                        </motion.div>
-
-                        <motion.div variants={item} className={styles.box_icon}>
-                          <span className={styles.icon_description}>
-                            VScode
-                          </span>
-                          <BiLogoVisualStudio className={styles.vscode} />
-                        </motion.div>
-                      </motion.div>
-                    </h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-}
+export default Skills;

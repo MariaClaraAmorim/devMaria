@@ -1,46 +1,45 @@
-import styles from "./Home.module.css";
-import { IoCloudDownloadOutline } from "react-icons/io5";
-import GIF from "../../../public/assets/maria.gif";
-import { t } from "i18next";
-import Transition from "../transition/Transition";
-import Medias from "../Medias";
+import { IoCloudDownloadOutline } from 'react-icons/io5';
+import GIF from '../../../public/maria.gif';
+import { useTranslation } from 'react-i18next';
+import Transition from '../transition/Transition';
+import './Home.css';
+import Medias from '../medias';
 
 const HomeComponent = () => {
-  return (
-    <>
-      <Transition onAnimationComplete={() => {}}>
-        <section className={styles.home}>
-          <div className={styles.home_content}>
-            <h1 className={styles.animate_h1}>Maria Clara</h1>
+    const { t } = useTranslation();
 
-            <div className={styles.transparent_text}>
-              <h3 className={styles.animation_text}>
-                {t("content.FrontEnd")}{" "}
-              </h3>
-            </div>
+    return (
+        <Transition onAnimationComplete={() => { }}>
+            <section className="home">
+                <div className="home-content">
+                    <h1 className="animate-h1">Maria Clara</h1>
 
-           <Medias />
+                    <div className="transparent-text">
+                        <h3 className="animation-text">
+                            {t("content.FrontEnd")}{" "}
+                        </h3>
+                    </div>
 
-            <div className={styles.btn_box}>
-              <a
-                href="./cv/Curriculo-MariaClaraVieiradeAmorim.pdf"
-                download
-                className={styles.btn}
-              >
-                {t("button.baixar")}
+                    <Medias />
 
-                <IoCloudDownloadOutline />
-              </a>
-            </div>
-          </div>
+                    <div className="btn-box">
+                        <a
+                            href="./cv/Curriculo-MariaClaraVieiradeAmorim.pdf"
+                            download
+                            className="btn"
+                        >
+                            {t("button.baixar")}
+                            <IoCloudDownloadOutline />
+                        </a>
+                    </div>
+                </div>
 
-          <div className={styles.home_img}>
-            <img src={GIF} alt="home_img" />
-          </div>
-        </section>
-      </Transition>
-    </>
-  );
+                <div className="home-img">
+                    <img src={GIF} alt="home-img" />
+                </div>
+            </section>
+        </Transition>
+    );
 };
 
 export default HomeComponent;

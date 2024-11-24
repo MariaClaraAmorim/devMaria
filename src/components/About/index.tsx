@@ -1,78 +1,71 @@
-import { t } from "i18next";
-import styles from "./About.module.css";
-import ABOUT_PROFILE from "../../../public/assets/profile/Eu.png";
+import ABOUT_PROFILE from "../../../public/Photo.png";
+import './about.css';
+import { useTranslation } from "react-i18next";
 
 const About = () => {
-  return (
-    <section className={styles.about}>
-      <div className={styles.container_img_skills}>
-        <img src={ABOUT_PROFILE} className={styles.about_img} />
-      </div>
+    const { t } = useTranslation();
 
-      <div>
-        <h2>{t("content.tittle")} 👋</h2>
+    return (
+        <section className="about">
+            <div className="container-img-skills">
+                <img src={ABOUT_PROFILE} className="about-img" alt="Profile" />
+            </div>
 
-        <p>{t("content.sobre")}</p>
+            <div className="about-content">
+                <h2>{t("content.tittle")} 👋</h2>
+                <p>{t("content.sobre")}</p>
 
-        <div className={styles.codeItem}>
-          <div data-aos="zoomIn">
-            <span className={styles.comment}></span>
-            <span className={styles.purple}>.infos {"\u007B"}</span>
-            <div>
-              <p className={styles.blue}>
-                {" "}
-                Nome:
-                <span className={styles.orange}>Maria Clara;</span>
-              </p>
-            </div>
-            <div>
-              <p className={styles.blue}>
-                Idade:
-                <span className={styles.orange}>21 anos;</span>
-              </p>
-            </div>
-            <div>
-              <p className={styles.blue}>
-                Natural:
-                <span className={styles.orange}>Barreiras, Bahia;</span>
-              </p>
-            </div>
-            <span className={styles.purple}>{"\u007D"}</span>
-          </div>
+                <div className="code-item">
+                    <div data-aos="zoomIn">
+                        <span className="comment"></span>
+                        <span className="purple">.infos {"\u007B"}</span>
+                        <div>
+                            <p className="blue">
+                                {t("nome")}: <span className="orange">{t("infos.nome")};</span>
+                            </p>
+                        </div>
+                        <div>
+                            <p className="blue">
+                                {t("idade")}: <span className="orange">{t("infos.idade")};</span>
+                            </p>
+                        </div>
+                        <div>
+                            <p className="blue">
+                                {t("cidade")}: <span className="orange">{t("infos.natural")};</span>
+                            </p>
+                        </div>
+                        <span className="purple">{"\u007D"}</span>
+                    </div>
 
-          <div data-aos="zoomIn">
-            <span className={styles.comment}></span>
-            <span className={styles.purple}>.formação {"\u007B"}</span>
-            <div>
-              <p className={styles.blue}>
-                Médio:
-                <span className={styles.orange}>Técnico em Informática;</span>
-              </p>
+                    <div data-aos="zoomIn">
+                        <span className="comment"></span>
+                        <span className="purple">.formação {"\u007B"}</span>
+                        <div>
+                            <p className="blue">
+                                {t("medio")}: <span className="orange">{t("formacao.medio")};</span>
+                            </p>
+                        </div>
+                        <div>
+                            <p className="blue">
+                                {t("local")}: <span className="orange">{t("formacao.localMedio")};</span>
+                            </p>
+                        </div>
+                        <div>
+                            <p className="blue">
+                                {t("superior")}: <span className="orange">{t("formacao.superior")};</span>
+                            </p>
+                        </div>
+                        <div>
+                            <p className="blue">
+                                {t("local")}: <span className="orange">{t("formacao.localSuperior")};</span>
+                            </p>
+                        </div>
+                        <span className="purple">{"\u007D"}</span>
+                    </div>
+                </div>
             </div>
-            <div>
-              <p className={styles.blue}>
-                Local:
-                <span className={styles.orange}>IFBA;</span>
-              </p>
-            </div>{" "}
-            <div>
-              <p className={styles.blue}>
-                Superior:
-                <span className={styles.orange}>Cursando Fisioterapia</span>
-              </p>
-            </div>
-            <div>
-              <p className={styles.blue}>
-                Local:
-                <span className={styles.orange}>Uniplan;</span>
-              </p>
-            </div>
-            <span className={styles.purple}>{"\u007D"}</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    );
 };
 
 export default About;

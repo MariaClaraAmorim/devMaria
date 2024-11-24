@@ -1,158 +1,158 @@
-import styles from "./Contact.module.css";
 import { useState } from "react";
 import Transition from "../../components/transition/Transition";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
-import { t } from "i18next";
 import { IoCafeOutline } from "react-icons/io5";
+import './Contact.css';
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
-  const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [message, setMessage] = useState<string>("");
-  const [nameError, setNameError] = useState<boolean>(false);
-  const [emailError, setEmailError] = useState<boolean>(false);
-  const [messageError, setMessageError] = useState<boolean>(false);
+    const { t } = useTranslation();
 
-  function sendEmail(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
+    const [name, setName] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [message, setMessage] = useState<string>("");
+    const [nameError, setNameError] = useState<boolean>(false);
+    const [emailError, setEmailError] = useState<boolean>(false);
+    const [messageError, setMessageError] = useState<boolean>(false);
 
-    if (name === "" || email === "" || message === "") {
-      setNameError(name === "");
-      setEmailError(email === "");
-      setMessageError(message === "");
+    const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
 
-      return;
-    }
+        if (name === "" || email === "" || message === "") {
+            setNameError(name === "");
+            setEmailError(email === "");
+            setMessageError(message === "");
+            return;
+        }
 
-    setNameError(false);
-    setEmailError(false);
-    setMessageError(false);
+        setNameError(false);
+        setEmailError(false);
+        setMessageError(false);
 
-    const templateParams = {
-      from_name: name,
-      email: email,
-      message: message,
+        const templateParams = {
+            from_name: name,
+            email: email,
+            message: message,
+        };
+
+        try {
+            const response = await emailjs.send(
+                "service_xajbchd",
+                "template_n6x2irr",
+                templateParams,
+                "WXkuL5X7swvRWuKEr"
+            );
+
+
+            if (response.status === 200) {
+                Swal.fire({
+                    title: "Ótimo!",
+                    text: "Mensagem enviada com sucesso!",
+                    icon: "success",
+                });
+                console.log("EMAIL ENVIADO", response.status, response.text);
+                setName("");
+                setEmail("");
+                setMessage("");
+            } else {
+                console.error("Erro no envio do e-mail", response);
+                Swal.fire({
+                    title: "Erro",
+                    text: "Houve um erro ao enviar sua mensagem. Tente novamente mais tarde.",
+                    icon: "error",
+                });
+            }
+        } catch (error) {
+            console.error("Erro ao enviar o e-mail", error);
+            Swal.fire({
+                title: "Erro",
+                text: "Houve um erro ao tentar enviar o e-mail. Por favor, verifique sua conexão.",
+                icon: "error",
+            });
+        }
     };
 
-    emailjs
-      .send(
-        "service_ybzk3ck",
-        "template_n6x2irr",
-        templateParams,
-        "WXkuL5X7swvRWuKEr"
-      )
-      .then(
-        (response) => {
-          if (response.status === 200) {
-            Swal.fire({
-              title: "Otimo!",
-              text: "Mensagem enviada com sucesso!",
-              icon: "success",
-            });
-          }
+    return (
+        <Transition onAnimationComplete={() => { }}>
+            <section className="contact-section">
+                <div className="contact-header">
+                    <h2>{t("contato.titulo")}</h2>
+                </div>
 
-          console.log("EMAIL ENVIADO", response.status, response.text);
-          setName("");
-          setEmail("");
-          setMessage("");
-        },
-        (error) => {
-          console.log("ERRO AO ENVIAR O EMAIL ", error);
-        }
-      );
-  }
+                <form className="contact-form" onSubmit={sendEmail}>
+                    <div className="contact-input-group">
+                        <div className="contact-input-wrapper">
+                            <input
+                                type="text"
+                                placeholder={t("contato.nome")}
+                                className={`contact-input ${nameError ? "error" : ""}`}
+                                id="name"
+                                onChange={(e) => {
+                                    setName(e.target.value);
+                                    setNameError(false);
+                                }}
+                                value={name}
+                            />
+                            <div
+                                id="error-name"
+                                className={`error-message ${nameError ? "show" : ""}`}
+                            >
+                                Campo nome completo é obrigatório!
+                            </div>
+                        </div>
 
-  return (
-    <Transition onAnimationComplete={() => {}}>
-      <section className={styles.contact}>
-        <div className={styles.header_container}>
-          <h2> {t("contato.titulo")}</h2>
-        </div>
+                        <div className="contact-input-wrapper">
+                            <input
+                                type="email"
+                                placeholder={t("contato.email")}
+                                className={`contact-input ${emailError ? "error" : ""}`}
+                                id="email"
+                                onChange={(e) => {
+                                    setEmail(e.target.value);
+                                    setEmailError(false);
+                                }}
+                                value={email}
+                            />
+                            <div
+                                id="error-email"
+                                className={`error-message ${emailError ? "show" : ""}`}
+                            >
+                                Campo e-mail é obrigatório!
+                            </div>
+                        </div>
+                    </div>
 
-        <form className={styles.form} onSubmit={sendEmail}>
-          <div className={styles.input_box}>
-            <div className={`${styles.input_field} ${styles.field}`}>
-              <input
-                type="text"
-                placeholder={t("contato.titulo")}
-                className={`${styles.item} ${nameError ? styles.error : ""}`}
-                id="name"
-                onChange={(e) => {
-                  setName(e.target.value);
-                  setNameError(false);
-                }}
-                value={name}
-              />
+                    <div className="contact-textarea-wrapper">
+                        <textarea
+                            placeholder={t("contato.mensagem")}
+                            id="message"
+                            cols={30}
+                            rows={10}
+                            className={`contact-textarea ${messageError ? "error" : ""}`}
+                            onChange={(e) => {
+                                setMessage(e.target.value);
+                                setMessageError(false);
+                            }}
+                            value={message}
+                        ></textarea>
+                        <div
+                            id="error-message"
+                            className={`error-message ${messageError ? "show" : ""}`}
+                        >
+                            Campo mensagem é obrigatório!
+                        </div>
+                    </div>
 
-              <div
-                id="error_name"
-                className={`${styles.error_message} ${
-                  nameError ? styles.show_message : ""
-                }`}
-              >
-                Campo nome completo é obrigatório!
-              </div>
-            </div>
-
-            <div className={`${styles.input_field} ${styles.field}`}>
-              <input
-                type="email"
-                placeholder={t("contato.email")}
-                className={`${styles.item} ${emailError ? styles.error : ""}`}
-                id="email"
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                  setEmailError(false);
-                }}
-                value={email}
-              />
-
-              <div
-                id="error_email"
-                className={`${styles.error_message} ${
-                  emailError ? styles.show_message : ""
-                }`}
-              >
-                Campo e-mail é obrigatório!
-              </div>
-            </div>
-          </div>
-
-          <div className={`${styles.textarea_field} ${styles.field}`}>
-            <textarea
-              name=""
-              placeholder={t("contato.mensagem")}
-              id="message"
-              cols={30}
-              rows={10}
-              className={`${styles.item} ${messageError ? styles.error : ""}`}
-              onChange={(e) => {
-                setMessage(e.target.value);
-                setMessageError(false);
-              }}
-              value={message}
-            ></textarea>
-
-            <div
-              id="error_message"
-              className={`${styles.error_message} ${
-                messageError ? styles.show_message : ""
-              }`}
-            >
-              Campo mensagem é obrigatório!
-            </div>
-          </div>
-
-          <div className={styles.btn_box}>
-            <button className={styles.btn} type="submit">
-              {t("contato.btn")} <IoCafeOutline />
-            </button>
-          </div>
-        </form>
-      </section>
-    </Transition>
-  );
+                    <div className="contact-button-wrapper">
+                        <button className="contact-button" type="submit">
+                            {t("contato.btn")} <IoCafeOutline className="icon-contact" />
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </Transition>
+    );
 };
 
 export default Contact;

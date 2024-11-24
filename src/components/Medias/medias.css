@@ -1,0 +1,49 @@
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-media a {
+    align-items: center;
+    border-radius: 50%;
+    color: var(--main-color);
+    display: inline-flex;
+    font-size: 1.6rem;
+    background: transparent;
+    border: 1px solid var(--main_color);
+    padding: 8px;
+    position: relative;
+    transition: 0.8s ease;
+}
+
+@media (max-width: 666px) {
+    .social-media {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.whatsapp-link:hover {
+    color: #fff;
+    background: #25d366;
+    border: none;
+}
+
+.instagram-link:hover {
+    color: #fff;
+    background: #c13584;
+    border: none;
+}
+
+.linkedin-link:hover {
+    color: #fff;
+    background: #2867b2;
+    border: none;
+}
+
+.github-link:hover {
+    color: #fff;
+    background: #181717;
+    border: none;
+}

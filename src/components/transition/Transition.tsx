@@ -1,9 +1,6 @@
-// // CSS
-import styles from "./Transition.module.css"
-// FRAMER MOTION
 import { motion } from "framer-motion"
-// HOOKS 
 import { ReactNode, useEffect } from "react";
+import "./Transition.css";
 
 interface TransitionProps {
     children: ReactNode;
@@ -26,7 +23,7 @@ const Transition = ({ children, onAnimationComplete }: TransitionProps) => {
     return (
         <>
             <motion.div
-                className={styles.slide_in}
+                className="slide-in"
                 initial={{ scaleY: 0 }}
                 animate={{ scaleY: 0 }}
                 exit={{ scaleY: 1 }}
@@ -37,7 +34,7 @@ const Transition = ({ children, onAnimationComplete }: TransitionProps) => {
             {children}
 
             <motion.div
-                className={styles.slide_out}
+                className="slide-out"
                 initial={{ scaleY: 1 }}
                 animate={{ scaleY: 0 }}
                 exit={{ scaleY: 0 }}
